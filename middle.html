@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>Doctor B2</title>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<script type="text/javascript" src="vue.js"></script>
+<style>
+button:hover{
+	box-shadow:10px 4px 4px rgba(15,34,213,0.4);
+	
+}
+button:visited{
+	color:red;
+}
+button{
+	background-color:rgba(1,1,1,0.0001);
+	border-radius:30px;
+}
+body{
+	background-image:url('prevw5.png'),url('images/preview2.jpg');
+	background-size:cover;
+	background-attachment:fixed;
+    background-repeat: no-repeat, repeat;
+	}
+#images{margin-top:20px;border:solid 1px;padding:20px;border-radius:40px;box-shadow:12px 5px 3px rgba(1,2,2,0.4);}
+#imag{width:25%;border-radius:30px ;border:1px solid gray;height:27%;}
+
+#selection_field{text-align:center;border:solid 1px;padding:20px;border-radius:40px;box-shadow:12px 5px 3px rgba(1,2,2,0.4)}
+img{width:30%;border-radius:30px ;border:1px solid gray;height:27%;
+}
+img:hover{
+	   width:38%;
+    height: 40%;
+    border: 1px solid red;
+}
+#part2{
+	border:1px solid green;
+	background-color: #fcf8e3
+}
+h1{
+	text-align:center;
+}
+#disease_image{ width:50%;}
+</style>
+</head>
+<body >
+<div class="container-fluid" id ="part1">
+	<div class="row" style="text-align:center">
+		<h1 style="font-size:80px;background-color:rgba(1,1,1,0.04)">MIDDLE BODY</h1>
+		<br>
+		<div class="col-sm-2">{{message}}</div>	
+		<div  class="col-sm-8">
+
+			<div  id="images" >
+				<img  type="button"  id="abdomen" src="images/abdomen.jpg" @click="message='Abdome'"/>
+				<img  type="button"  id="liver" src="images/liver.jpg" @click="message='Liver'"/>
+				<img   type="button" id="kidney" src="images/kidney.png" @click="message='Kidney'"/>
+				<img   type="button" id="stomach" src="images/stomach.png" @click="message='Stomach'"/>	
+				<img   type="button" id="lungs" src="images/lungs.png" @click="message='Lungs'"/>
+				<img   type="button" id="heart" src="images/heart.jpg" @click="message='Heat'"/>
+				<img   type="button" id="gastrointenstinal" src="images/gastro.png" @click="message='Gastrointenstinal'"/>
+				<img   type="button" id="blood vessel" src="images/blood_vessel.png" @click="message='BloodVessel'"/>
+				<img   type="button" id="spinal cord" src="images/spinal-cord.jpg" @click="message='Spinalcord'"/>
+			</div>
+		</div>
+		<div class="col-sm-2"></div> 				
+	 </div>
+
+
+	<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8" id="part2" v-for="i in list" v-if="i.name == message">
+				<h1>{{i.name}}</h1>{{message}}
+				<p><h2>What</h2>{{i.what}}</p><br>
+				<p><h2>Symtoms</h2><span v-for="p in i.symtoms"><li>{{p}}</li></span></p><br>
+				<p><h2>Problems</h2>{{i.problems}}</p>
+				<p><h2>Specialist can be :</h2><span v-for="k in i.Doctors"><li>{{k}}</li></span><br></p>
+			</div>
+			<div class="col-sm-2"></div>
+	</div>		
+</div>		
+
+
+<script type="text/javascript" >
+	new Vue({
+		el:"#part1 ,#part2",
+		data:{
+		message:'',
+		list:[
+			{
+				name:'Liver',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+			{
+				name:'Spinalcord',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+			{
+				name:'kidney',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+
+			{
+				name:'Lungs',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+			{
+				name:'Stomach',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+			{
+				name:'Heat',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+			{
+				name:'Abdome',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+			{
+				name:'Throat',
+				what:"Brain tumours are growths of cells in the brain that multiply in an abnormal, uncontrollable way. They can either be cancerous (malignant) or non-cancerous (benign).",
+				symtoms:['pain','immune system',],
+				problems:"A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.<br>A malignant brain tumour is a fast-growing cancer that spreads to other areas of the brain and spine. Learn about malignant brain tumour symptoms and treatments.",
+				Doctors :['neurologist','dentist','surgeon'],
+			},
+
+
+
+		],
+		},
+});
+
+</script>
+
+
+
+</body>
+</html> 

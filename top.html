@@ -1,0 +1,289 @@
+<html>
+<head>
+<title>Doctor</title>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<script type="text/javascript" src="vue.js"></script>
+<style>
+button:hover{
+	background-color:g;
+	box-shadow:10px 4px 4px rgba(15,34,213,0.4);
+}
+button:visited{
+	color:red;
+}
+button{
+	background-color:rgba(1,1,1,0.0001);
+	border-radius:30px;
+}
+body{
+	background-image:url(''),url('images/preview2.jpg');
+	background-size:cover;
+	background-attachment:fixed;
+    background-repeat: no-repeat, repeat;
+	}
+#images{
+	margin-top:20px;border:solid 1px;padding:20px;border-radius:40px;box-shadow:12px 5px 3px rgba(1,2,2,0.4);
+}
+#imag{
+	width:25%;border-radius:30px ;border:1px solid gray;height:27%;
+}
+
+#selection_field{
+	text-align:center;border:solid 1px;padding:20px;border-radius:40px;box-shadow:12px 5px 3px rgba(1,2,2,0.4)}
+img{
+	width:30%;border-radius:30px ;border:1px solid gray;height:27%;
+}
+img:hover{
+	   width:38%;
+    	height: 30%;
+    	border: 1px solid red;
+}
+p{
+background-color: red ;
+}
+#part2{
+	border:1px solid green;
+	background-color: #fcf8e3
+}
+h1{
+	text-align:center;
+}
+#disease_image{ width:50%;}
+</style>
+</head>
+<body >
+							<!-- dialog
+<div id="app">
+  <v-app id="inspire">
+    <div>
+      <v-layout row justify-center>
+        <v-btn color="primary" dark @click.stop="dialog = true">Open Dialog 1</v-btn>
+     <v-dialog
+          v-model="dialog"
+          transition="dialog-bottom-transition"
+          :overlay="false"
+          scrollable
+        >
+          <v-card tile>
+            <v-toolbar card dark color="primary">
+              <v-btn icon @click.native="dialog = false" dark>
+                <v-icon>close</v-icon>
+              </v-btn>
+              <v-toolbar-title>Settings</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-toolbar-items>
+                <v-btn dark flat @click.native="dialog = false">Save</v-btn>
+              </v-toolbar-items>
+              <v-menu bottom right offset-y>
+                <v-btn slot="activator" dark icon>
+                  <v-icon>more_vert</v-icon>
+                </v-btn>
+                <v-list>
+                  <v-list-tile v-for="(item, i) in items" :key="i" @click="">
+                    <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                  </v-list-tile>
+                </v-list>
+              </v-menu>
+            </v-toolbar>
+            <v-card-text>
+              <v-btn color="primary" dark @click.stop="dialog2 = !dialog2">Open Dialog 2</v-btn>
+              <v-tooltip right>
+                <v-btn slot="activator">Tool Tip Activator</v-btn>
+                Tool Tip
+              </v-tooltip>
+         
+                  <v-content>
+      <v-container fluid>
+        <H2>Tag your problems here....</H2><br>
+              <v-select
+            label="tag your problems here.."
+            chips
+            tags
+            solo
+            prepend-icon="filter_list"
+            append-icon=""
+            clearable
+            v-model="chips"
+          >
+            <template slot="selection" slot-scope="data">
+              <v-chip
+                close
+                @input="remove(data.item)"
+                :selected="data.selected"
+              >
+                <strong>{{ data.item }}</strong>&nbsp;
+                <span></span>
+              </v-chip>
+            </template>
+          </v-select>
+          <br><hr>
+          <v-card>
+            <v-card-text>
+              <v-container fluid>
+                <v-layout row wrap>
+                  <v-flex xs12>
+                    <h2> tell the points of problem :</h2>
+                    <v-radio-group v-model="color" row>
+                      <v-radio
+                        v-for="(colorValue, i) in ['success', 'info', 'error', 'cyan darken-2']"
+                        :key="i"
+                        :value="colorValue"
+                        :label="colorValue"
+                        :color="colorValue"
+                      ></v-radio>
+                    </v-radio-group>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+          </v-card>
+
+            <v-layout row wrap>
+              <v-flex xs6>
+                <v-subheader>select the level of pain</v-subheader>
+              </v-flex>
+              <v-flex xs6>
+                <v-select
+                  label="Select"
+                  :items="items"
+                  v-model="e3"
+                  :error-messages="['Please select an option']"
+                  item-value="text"
+                ></v-select>
+              </v-flex>
+           <v-flex xs12 sm6>
+                <v-subheader v-text="'Multiple (Chips) with persistent hint'"></v-subheader>
+              </v-flex>
+              <v-flex xs12 sm6>
+                <v-select
+                  label="Select"
+                  :items="states"
+                  v-model="e7"
+                  multiple
+                  chips
+                  hint="What are the target regions"
+                  persistent-hint
+                ></v-select>
+              </v-flex>
+
+            <v-card-text>
+              <v-container fluid grid-list-md>
+                <v-layout row wrap>
+                  <v-flex xs9>
+                    <v-slider label="temp" :max="150" v-model="temp"></v-slider>
+                  </v-flex>
+                  <v-flex xs3>
+                    <v-text-field v-model="temp" type="number"></v-text-field>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+            </v-layout>
+          </v-container>
+       
+      <div class="text-xs-center">
+          <v-btn fab large dark color="error">Save</v-btn>
+        </div>
+      <div class="text-xs-center">
+          <v-btn round color="primary" dark>Connect Doctor</v-btn>
+        </div>
+
+</v-content>
+       
+            </v-card-text>
+  
+            <div style="flex: 1 1 auto;"></div>
+          </v-card>
+        </v-dialog>
+      </v-layout>
+    </div>
+  </v-app>
+</div>
+-->
+<div class="container-fluid" id="part1">
+	<div class="row" style="text-align:center">
+		<h1 style="font-size:80px;background-color:rgba(1,1,1,0.04)">Top BODY</h1>
+		<br>
+		<div class="col-sm-2">{{message}}</div>	
+		<div  class="col-sm-8" style="text-align:center;">
+			<div  id="images" >
+				<a href="form.html"><img type="button" id="brain" src="images/brain.jpg" /></a>
+				<a href="form.html"><img   type="button" id="hair" src="images/hair.png" /></a>
+				<a href="form.html"><img   type="button"  id="eyes" src="images/eyes.jpg" /></a>
+				<a href="form.html"><img   type="button" id="noes" src="images/nose.jpg" /></a>
+				<a href="form.html"><img   type="button" id="ear" src="images/ear.png" /></a>
+				<a href="form.html"><img   type="button" id="teeth" src="images/teeth.png" /></a>
+				<a href="form.html"><img   type="button" id="mouth" src="images/mouth.png" /></a>
+				<a href="form.html"><img   type="button" id="thoat" src="images/thoat.jpg" />	</a>
+			</div>
+			<div class="col-sm-2" ></div>
+		</div>
+</div>
+<div class="container-fluid" >
+	<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8" id="part2" v-for="i in list" v-if="i.name==message">
+				<h1>{{i.name}}</h1>
+				<p><h2>What</h2>{{i.what}}</p><br>
+				<p><h2>Symtoms</h2><span v-for="p in i.symtoms"><li>{{p}}</li></span></p><br>
+				<p><h2>Problems</h2>{{i.problems}}</p>
+				<p><h2>Specialist can be :</h2><span v-for="k in i.Doctors"><li>{{k}}</li></span><br></p>
+			</div>
+			<div class="col-sm-2"></div>
+	</div>		
+</div>		
+</div>
+
+
+
+
+
+
+
+
+
+<script src="node_modules\vuetify\dist\vuetify.js"></script>
+<script type="text/javascript" >
+	new Vue({
+		el:"#part1, #part2, #app",
+		data:{
+			    dialog: false,
+       temp: 75,
+      color: '',
+      e6: [],
+      e7: [],
+      items: [
+        { text: 'level high' },
+        { text: 'less pain' },
+        { text: 'moderate' },
+        { text: 'cannt say' },
+        { text: 'some-what' },
+        { text: 'No' },
+      ],
+      states: [
+        'Alabama', 'Alaska', 'American Samoa', 'Arizona',
+        'Arkansas', 'California', 'Colorado', 'Connecticut',
+        'Delaware', 'District of Columbia', 'Federated States of Micronesia',
+        'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
+        'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+        'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
+        'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+        'Missouri', 'Montana', 'Nebraska', 'Nevada',
+        'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+        'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
+        'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
+        'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+        'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
+        'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+      ],
+   
+		dialog: false,
+		message:'',
+
+		},
+});
+
+</script>
+
+</body>
+</html>

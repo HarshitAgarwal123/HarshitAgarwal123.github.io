@@ -1,0 +1,166 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
+    <link href="node_modules\vuetify\dist\vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+<style>
+img:hover{
+  padding: 12px
+}
+</style>
+
+  <body>
+
+
+<div id="app">
+  <v-app id="inspire">
+    <v-content>
+      <v-container fluid>
+        <H2>Tag your problems here....</H2><br>
+              <v-select
+            label="tag your problems here.."
+            chips
+            tags
+            solo
+            prepend-icon="filter_list"
+            append-icon=""
+            clearable
+            v-model="chips"
+          >
+            <template slot="selection" slot-scope="data">
+              <v-chip
+                close
+                @input="remove(data.item)"
+                :selected="data.selected"
+              >
+                <strong>{{ data.item }}</strong>&nbsp;
+                <span></span>
+              </v-chip>
+            </template>
+          </v-select>
+          <br><hr>
+          <v-card>
+            <v-card-text>
+              <v-container fluid>
+                <v-layout row wrap>
+                  <v-flex xs12>
+                    <h2> tell the points of problem :</h2>
+                    <v-radio-group v-model="color" row>
+                      <v-radio
+                        v-for="(colorValue, i) in ['Pain', 'Unconsiousness', 'Vomting', 'un-willing']"
+                        :key="i"
+                        :value="colorValue"
+                        :label="colorValue"
+                        :color="colorValue"
+                      ></v-radio>
+                    </v-radio-group>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+          </v-card>
+          
+          <v-container fluid>
+            <v-layout row wrap>
+              <v-flex xs6>
+                <v-subheader>select the level of pain</v-subheader>
+              </v-flex>
+              <v-flex xs6>
+                <v-select
+                  label="Select"
+                  :items="items"
+                  v-model="e3"
+                  :error-messages="['Please select an option']"
+                  item-value="text"
+                ></v-select>
+              </v-flex>
+              <v-container>
+           <v-flex xs12 sm6>
+                <v-subheader v-text="'Do you have this problems :'"></v-subheader>
+              </v-flex>
+              <v-flex xs12 sm6>
+                <v-select
+                  label="Select"
+                  :items="states"
+                  v-model="e7"
+                  multiple
+                  chips
+                  hint="What are the target regions"
+                  persistent-hint
+                ></v-select>
+              </v-flex>
+            </v-container>
+              
+            
+            <v-card-text>
+              <v-container fluid grid-list-md>
+                <v-layout row wrap>
+                  <v-flex xs9>
+                    <v-slider label="temp" :max="150" v-model="temp"></v-slider>
+                  </v-flex>
+                  <v-flex xs3>
+                    <v-text-field v-model="temp" type="number"></v-text-field>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+            </v-layout>
+          </v-container>
+       
+      <div class="text-xs-center">
+          <v-btn fab large dark color="error">Save</v-btn>
+        </div>
+      <div class="text-xs-center">
+        <a href="https://dazzling-mahavira-90a939.netlify.com/#/Chat">
+          <v-btn round color="primary" dark>Connect Doctor</v-btn>
+        </a>
+        </div>
+    
+   </v-container> 
+</v-content>
+  </v-app>
+</div>
+    <script src="vue.js"></script>
+    <script src="node_modules\vuetify\dist\vuetify.js"></script>
+    <script>
+ new Vue({
+  el: '#app',
+  data () {
+    return {
+       temp: 75,
+      color: '',
+      e6: [],
+      e7: [],
+      items: [
+        { text: 'level high' },
+        { text: 'less pain' },
+        { text: 'moderate' },
+        { text: 'cannt say' },
+        { text: 'some-what' },
+        { text: 'No' },
+      ],
+      states: [
+        'Alabama', 'Alaska', 'American Samoa', 'Arizona',
+        'Arkansas', 'California', 'Colorado', 'Connecticut',
+        'Delaware', 'District of Columbia', 'Federated States of Micronesia',
+        'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
+        'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+        'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
+        'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+        'Missouri', 'Montana', 'Nebraska', 'Nevada',
+        'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+        'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
+        'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
+        'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+        'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
+        'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+      ]
+    }
+  },
+
+})
+    </script>
+  </body>
+  </html>

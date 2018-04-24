@@ -1,0 +1,185 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
+    <link href="node_modules\vuetify\dist\vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+<style>
+img:hover{
+  padding: 12px
+}
+</style>
+
+  <body>
+
+
+<div id="app" class="text-md-center">
+  <v-container  xs12  sm4  md4 lg4>
+  <v-layout>
+  <v-flex> 
+  <v-app id="inspire">
+   <v-stepper-header style="text-align: center"><h1>Diagonsis Question -Answer </h1></v-stepper-header>
+    <v-stepper v-model="e1">
+      <v-stepper-header>
+        <v-stepper-step step="1" :complete="e1 > 1">Question  1</v-stepper-step>
+        <v-divider></v-divider>
+        <v-stepper-step step="2" :complete="e1 > 2">Question 2</v-stepper-step>
+        <v-divider></v-divider>
+        <v-stepper-step step="3" :complete="e1 > 3">Question 3</v-stepper-step>
+         <v-divider></v-divider>
+        <v-stepper-step step="4">Question 4</v-stepper-step>
+      </v-stepper-header>
+      <v-stepper-items>
+
+        <v-stepper-content step="1">
+          <v-card color="grey lighten-1" class="mb-5" height="200px">
+                    <H2>Tag your problems here....</H2><br>
+            <v-container>
+              <v-select
+            label="tag your problems here.."
+            chips
+            tags
+            solo
+            prepend-icon="filter_list"
+            append-icon=""
+            clearable
+            v-model="chips"
+          >
+            <template slot="selection" slot-scope="data">
+              <v-chip
+                close
+                @input="remove(data.item)"
+                :selected="data.selected"
+              >
+                <strong>{{ data.item }}</strong>&nbsp;
+                <span></span>
+              </v-chip>
+            </template>
+          </v-select>
+        </v-container>
+          </v-card>
+          <v-btn color="primary" @click.native="e1 = 2">Continue</v-btn>
+          <v-btn flat>Cancel</v-btn>
+        </v-stepper-content>
+
+        <v-stepper-content step="2">
+          <v-card color="grey lighten-1" class="mb-5" height="200px">
+            <v-container> 
+         <v-card>
+            <v-card-text>
+              <v-container fluid>
+                <v-layout row wrap>
+                  <v-flex xs12>
+                    <h2> tell the points of problem :</h2>
+                    <v-radio-group v-model="color" row>
+                      <v-radio
+                        v-for="(colorValue, i) in ['Pain', 'Unconsiousness', 'Vomting', 'un-willing']"
+                        :key="i"
+                        :value="colorValue"
+                        :label="colorValue"
+                        :color="colorValue"
+                      ></v-radio>
+                    </v-radio-group>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+          </v-card>
+          <v-container>
+
+          </v-card>
+          <v-btn color="primary" @click.native="e1 = 3">Continue</v-btn>
+          <v-btn flat>Cancel</v-btn>
+        </v-stepper-content>
+
+        <v-stepper-content step="3">
+          <v-card color="grey lighten-1" class="mb-5" height="200px"> 
+            <v-card-text>
+              <v-container fluid grid-list-md>
+                <v-layout row wrap>
+                  <v-flex xs9>
+                    <v-slider label="BOdy Temprature" :max="150" v-model="temp" class="pink lighten-5"></v-slider>
+                  </v-flex>
+                  <v-flex xs3>
+                    <v-text-field v-model="temp" type="number" class="green lighten-1"></v-text-field>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+          </v-card>
+          <v-btn color="primary" @click.native="e1 = 4">Continue</v-btn>
+          <v-btn flat>Cancel</v-btn>
+        </v-stepper-content>
+
+        <v-stepper-content step="4">
+          <v-card color="grey lighten-1" class="mb-5" height="200px"> 
+            
+          <v-container class="blue-grey lighten-5">
+           <v-flex xs10 sm6>
+                <v-subheader v-text="'Do you have this problems :'"></v-subheader>
+              </v-flex>
+              <v-flex xs12 sm6>
+                <v-select
+                  label="Select"
+                  :items="states"
+                  v-model="e7"
+                  multiple
+                  chips
+                  hint="What are the target regions"
+                  persistent-hint
+                ></v-select>
+              </v-flex>
+            </v-container>
+          
+          </v-card>
+      <div class="text-xs-center">
+        <a href="https://dazzling-mahavira-90a939.netlify.com/#/Chat">
+          <v-btn round color="primary" dark>Connect Doctor</v-btn>
+        </a>
+        <a href="">
+          <v-btn round color="error" >Save</v-btn>
+        </a>
+        </div>
+        </v-stepper-content>
+
+      </v-stepper-items>
+    </v-stepper>
+  </v-app>
+</v-flex>
+</v-layout>
+</v-container>
+</div>
+  <script src="vue.js"></script>
+  <script src="node_modules\vuetify\dist\vuetify.js"></script>
+  <script>
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      e1: 0,
+      temp: 75,
+          states: [
+        'Alabama', 'Alaska', 'American Samoa', 'Arizona',
+        'Arkansas', 'California', 'Colorado', 'Connecticut',
+        'Delaware', 'District of Columbia', 'Federated States of Micronesia',
+        'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho',
+        'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+        'Louisiana', 'Maine', 'Marshall Islands', 'Maryland',
+        'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+        'Missouri', 'Montana', 'Nebraska', 'Nevada',
+        'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+        'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio',
+        'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico',
+        'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+        'Texas', 'Utah', 'Vermont', 'Virgin Island', 'Virginia',
+        'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+      ]
+    }
+  }
+})
+
+
+  </script>
+</body>
+</html>

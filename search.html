@@ -1,0 +1,173 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
+    <link href="node_modules\vuetify\dist\vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+<style>
+img:hover{
+  padding: 12px
+}
+</style>
+
+  <body  >
+  <div id="app" >
+    <v-app id="inspire"  class="black">
+<template>
+  <v-container >
+  <v-card>
+    <v-card-title >
+  Medicines
+      <v-spacer></v-spacer>
+      <v-text-field
+        append-icon="search"
+        label="Search by name or Composition"
+        single-line
+        hide-details
+        v-model="search"
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      :headers="headers"
+      :items="items"
+      :search="search" class="red"
+    >
+      <template slot="items" slot-scope="props" large >
+        <tr>
+          <td><h2>{{ props.item.MName }}</h2></td>    
+            <td>
+              <div class="blue-grey lighten-4" class="text-xs-right"  v-for="i in props.item.Composition" large><li><B>{{i}}</li></div>
+            </td>
+            <td style="padding:30px">
+              <div class="red lighten-5" class="text-xs-right"  v-for="i in props.item.Prescribed" large><li style="padding: 4px"><B>{{i}}</li></div>
+            </td>
+            <td>
+              <div class="gray lighten-5" class="text-md-right" >{{props.item.price}}</div>
+            </td>
+        </tr>
+      </template>
+      <v-alert  slot="no-results" :value="true" color="error" icon="warning">
+        Your search for "{{ search }}" found no results.
+      </v-alert>
+    </v-data-table>
+  </v-card>
+</template>
+</v-container>
+    </v-app>
+  </div>    
+    <script src="vue.js"></script>
+    <script src="node_modules\vuetify\dist\vuetify.js"></script>
+
+
+<script>
+ new Vue({
+  el:"#app",
+    data () {
+      return {
+        search: '',
+        headers: [
+          {
+            text: 'Medicine Name (100g serving)',
+            align: 'left',
+            sortable: false,
+            value: 'MName'
+          },
+          { text: 'Compostion', value: 'Compostion' },
+          { text: 'Prescribed for', value: '' },
+          {text:'price/mg' ,value:'price'}
+        ],
+        items: [
+          {
+
+            MName: "Cepacol Sorethroat-Cough",
+            Substitute:'' ,
+            Composition: ["Dextromethorphan-Benzocaine"], 
+            Prescribed: ["cough with mucus", "cough caused by smoking", "emphysema", "chronic bronchitis", "a sore throat with fever", "headache", "swelling", "skin rash","vomiting", "pregnancy", "breast-feeding"],
+            price:12,
+          },
+          { 
+            MName: "Paracetamol 500 MG",
+            Substitute: ["Actiflu 500 MG Tablet", "Paracold 500 mg Tablet"],
+            Composition: ["Acetaminophen 500 MG"],
+            Prescribed: ["headache", "menstrual periods", "toothaches", "backaches", "osteoarthritis","cold/flu aches", "fever"],
+            price:1,
+          },
+
+         {
+          MName: "Aspirin" ,
+          Substitute:'' ,
+          Composition: ["Acetylsalicylic acid (ASA)"],
+          Prescribed: ["Pain and fever", "Arthritis", "Rheumatic fever", "Acute Coronary Syndrome", "Kawasaki Disease"],
+          price:4,
+        },
+
+
+
+      {
+        MName: "ACUTRET 20 MG CAPSULE",
+        Substitute: ["Acnex 20 MG Capsule", "D Acne I 20 MG Capsule", "Sotret 20 MG Capsule"],
+        Composition: ["Isotretinoin 20 MG"], 
+        Prescribed: ["Acne Vulgaris"],
+        price:7,
+      },
+
+    {
+        MName: "Azilide 500 MG Tablet",
+        Substitute: ["Azeemune 500 MG Tablet", "Azimek 500 MG Tablet"],
+        Composition: ["Azithromycin 500 MG"],
+        Prescribed: ["Community acquired pneumonia",
+                "Ear Infection (Otitis Media)",
+                "Pharyngitis/Tonsillitis",
+                "Skin and soft tissue infections",
+                "Cat Scratch Disease",
+                "Acne vulgaris",
+                "Bacterial conjunctivitis"
+              ],
+        price:9,
+    },       
+       
+    {
+        MName: "SBL Diaboherb capsule",
+        Composition: ["Syzygium Cumini (jamun Seed)", "Gymnema sylvestre (gurmar leaves)", "Coccinia indica (Bimbi Leaves)", "Abroma augusta(ulat kambal Whole Plant)", "Crataegus oxycantha(ban sangli)"],
+        Prescribed: ["frequent urination", "increased thirst", "increased appetite", "diabetes-related heart problems"],
+        price:15,
+    },
+
+
+  {
+        MName: "SBL Nixocid Tablet",
+        Composition: ["Natrum phosphoricum 3x", "Lycopodium clavatum 3x", "Carbo vegetabilis 6x", "Robinia pseudacacia 3x"],
+        Prescribed: ["Hyperacidity","Indigestion"],
+        price:9,
+    },
+
+
+
+{
+  MName: "Pantodac DSR",
+  Composition:["Domperidone(30 MG) + Pantoprazole(40 MG)"],
+  Substitute: ["Pan-D Capsule","Pantocid DSR Capsule","Panfast DSR Capsule"],
+  Prescribed: ["Gastroesophageal reflux disease (Acid reflux)"],
+  price:6,
+},
+
+
+
+{
+  MName: "Prozac",
+  Substitute: "Sarafem",
+  Composition: ["Fluoxetine"],
+  Prescribed: ["depression", "panic attacks", "obsessive compulsive disorder", "eating disorder (bulimia)", "premenstrual syndrome"],
+  price:5,
+},
+
+
+    ]
+      }
+    }
+  })
+</script>
+
+  </body>
+  </html>

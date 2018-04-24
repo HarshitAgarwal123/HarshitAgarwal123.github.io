@@ -1,0 +1,340 @@
+ <html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
+    <link href="node_modules\vuetify\dist\vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+  </head>
+<style>
+<style>
+.col-sm-3{
+  box-shadow: 1px 1px 1px;
+  padding:14px;
+  margin-left: 16px;
+  background-image:url('preview5.jpg');
+}
+h2{
+  color:blue;
+}
+h2:hover{
+  color:red;
+}
+p{
+  margin-left:100px;
+}
+button:hover{
+	box-shadow:10px 4px 4px rgba(15,34,213,0.4);
+	padding:1px;
+}
+button{
+	background-color:rgba(1,1,1,0.0001);
+	border-radius:30px;
+}
+body{
+	background-image:url('images/s.jp'),url('images/preview4.pn');
+	background-size:cover;
+	background-attachment:fixed;
+    background-position: right bottom,bottom,;
+    background-repeat: no-repeat, repeat;
+	}
+#images{
+	float:right;
+	margin-top:20px;
+	border:solid 1px;
+	padding:20px;
+	border-radius:40px;
+	box-shadow:12px 5px 3px rgba(1,2,2,0.4);
+	background-color:rgba(1,1,1,0.2);
+}
+#imag{width:100%;border-radius:30px ;border:1px solid gray;}
+li{padding: 20px;font-size: 20px}
+</style>
+
+</style>
+
+  <body>
+
+<div class="container">
+
+
+ <div id="app"  >
+    <v-app id="inspire" dar >
+    	<container>
+		    <template  class="col-sm-12" class="col-md-10">
+			  <v-card height="100px" >
+			  	  <ul class="nav nav-tabs">
+				    <li class="active"><a data-toggle="tab" href="#Body-part">Body Part</a></li>
+				    <li><a data-toggle="tab" href="#part2">Muscles</a></li>
+				    <li><a data-toggle="tab" href="#part3">Skin</a></li>
+				    <li><a data-toggle="tab" href="#part4">Medical condition</a></li>
+				  </ul>
+			  </v-card>
+			</template>
+		</container>	
+  
+  <div class="tab-content">
+    <div id="Body-part" class="tab-pane fade in active">
+			<div class="container-fluid">
+					<div class="row" style="text-align:center">
+						<div class="col-sm-0" class="col-md-1"></div>
+						<div id ="part1" class="col-sm-12" class="col-md-10" >
+							<div >
+								<h1>SEARCH BY :</h1>
+							</div>
+							<div  id="images">
+								<h1 style="padding:1px;font-family: Times New Roman, Times, serif;"> BODY PART</h1>
+								<a href="top.html" ><button  id="toppart"><img id="imag"  src="images/toppart.jpg" ></button></a>
+								<a href="middle.html" ><button  id="midpart"><img id="imag" src="images/midpart.jpg" ></button></a>
+								<a href="bottom.html" ><button  id="bottompart"><img id="imag" src="images/bottompart.jpg" ></button></a>
+							</div>
+							<br>
+							<br>
+						</div>
+						<div class="col-sm-0" class="col-md-1"></div>
+						</div>
+			  </div>
+	</div>
+
+
+    <div id="part2" class="tab-pane fade">
+      <h3>Muscles/Bones/Joints</h3>
+			<div class="container-fluid" style="text-align: center;">
+			    <h1 style="font-size:80px;background-color:rgba(1,1,1,0.04);font-family: Times New Roman, Times, serif;">Muscles</h1>
+			</div>
+
+			 <div class="container-fluid">
+			    <div class="row">
+			      <div class="col-sm-1"></div>
+			      <div class="col-sm-3">
+			      	<a href="form.html">
+				        <h2>Ankel problem</h2>
+				      </a>
+			        <p>learn symtoms and treatment</p>
+			      </div>
+			      <div class="col-sm-3">
+			      	<a href="form.html">
+			        <h2>foot problem</h2></a>
+			        <p>learn symtoms and treatment</p>       
+			      </div>
+			      <div class="col-sm-3">
+			      	<a href="form.html">
+			        <h2>Back problems</h2></a>
+			        <p>learn symtoms and treatment</p>       
+			      </div>
+			      <div class="col-sm-1"></div>
+			    </div>
+			 </div>
+			 <br>
+			 <div class="container-fluid">
+			    <div class="row">
+			      <div class="col-sm-1"></div>
+			      <div class="col-sm-3">
+			      	<a href="form.html">
+			        <h2>Elbow prolems</h2></a>
+			        <p>how to look after elbow pain and when to see your GP</p>
+			      </div>
+			      <div class="col-sm-3">
+			      	<a href="form.html">
+			        <h2>types: musclse</h2></a>
+			        <p>includes miscarries ,stillbirth and suddent infant death syndrome</p>        
+			      </div>
+			      <div class="col-sm-3">
+			      	<a href="form.html">
+			        <h2>neck muscles</h2></a>
+			        <p>includes kidney stones, cystitis ,uninary track infections and incontinence</p>        
+			      </div>
+			      <div class="col-sm-1"></div>
+			    </div>
+			 </div>
+			 <br>
+
+			  <br>
+	</div>
+
+    <div id="part3" class="tab-pane fade">
+      <h3>Skin</h3>
+      
+<div class="container-fluid" style="text-align: center;">
+    <h1 style="font-size:80px;background-color:rgba(1,1,1,0.04);font-family: Times New Roman, Times, serif;">Skin</h1>
+</div>
+
+		  <div class="container-fluid">
+		    <div class="row">
+		      <div class="col-sm-1"></div>
+		      <div class="col-sm-3">
+		      	<a href="form.html">
+		        <h2>Acne</h2></a>
+		        <p>learn symtoms and treatment</p>
+		      </div>
+		      <div class="col-sm-3">
+		      	<a href="form.html">
+		        <h2>Chilblains</h2></a>
+		        <p>learn symtoms and treatment</p>       
+		      </div>
+		      <div class="col-sm-3">
+		      	<a href="form.html">
+		        <h2>Discoid</h2></a>
+		        <p>learn symtoms and treatments</p>       
+		      </div>
+		      <div class="col-sm-1"></div>
+		    </div>
+		  </div>
+		  <br>
+
+
+		  <div class="container-fluid">
+		    <div class="row">
+		      <div class="col-sm-1"></div>
+		      <div class="col-sm-3">
+		        <h2>Injuries</h2>
+		        <p>Nutritional</p>
+		      </div>
+		      <div class="col-sm-3">
+		        <h2>irth</h2>
+		        <p>includes miscarries ,stillbirth and suddent infant death syndrome</p>        
+		      </div>
+		      <div class="col-sm-3">
+		        <h2>Scabies</h2>
+		        <p>learn symtoms and treatment</p>        
+		      </div>
+		      <div class="col-sm-1"></div>
+		    </div>
+		  </div>
+		  <br>
+
+		  <div class="container-fluid">
+		    <div class="row">
+		      <div class="col-sm-1"></div>
+		      <div class="col-sm-3">
+		        <h2>Rosacea</h2>
+		        <p>learn symtoms and treatment</p>
+		      </div>
+		      <div class="col-sm-3">
+		        <h2>Psoriasis</h2>
+		        <p>learn symtoms and treatment</p>       
+		      </div>
+		      <div class="col-sm-3">
+		        <h2>Warts and verrucas</h2>
+		        <p>learn symtoms and treatment</p>       
+		      </div>
+		      <div class="col-sm-1"></div>
+		    </div>
+		  </div>
+		  <br>
+    </div>
+
+    <div id="part4" class="tab-pane fade">
+      <h3>Medical-conditions</h3>
+
+<div class="container-fluid" style="text-align: center;">
+		<h1 style="font-size:80px;background-color:rgba(1,1,1,0.04);font-family: Times New Roman, Times, serif;"> Medical conditions</h1>
+</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-3">
+				<a href="form.html">
+				<h2>Diabeties</h2></a>
+				<p>Includes type 1 and 2 diabletes , and diabetic retinopathy</p>
+			</div>
+			<div class="col-sm-3">
+				<a href="form.html">
+				<h2>Infection and poisoning</h2></a>
+				<p>Include colds ,flu ,noreovirus ,chickenpox ,and measles</p>				
+			</div>
+			<div class="col-sm-3">
+				<a href="form.html">
+				<h2>Pregnancy and childbirth</h2></a>
+				<p>Includes miscarriage ,stillbirth and suddent infant syndrome</p>				
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</div>
+	<br>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-3">
+				<h2>Comman heart Conditions</h2>
+				<p>Nutritional</p>
+			</div>
+			<div class="col-sm-3">
+				<h2>Chromic Medication services</h2>
+				<p>includes miscarries ,stillbirth and suddent infant death syndrome</p>				
+			</div>
+			<div class="col-sm-3">
+				<h2>Heath records</h2>
+				<p>includes kidney stones, cystitis ,uninary track infections and incontinence</p>				
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</div>
+	<br>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-3">
+				<h2>Arthritis</h2>
+				<p>learn symtoms</p>
+			</div>
+			<div class="col-sm-3">
+				<h2>Blood cancer</h2>
+				<p>cancer that can develop in the blood includeing leukaemia ,lyphoma and myeloma.</p>				
+			</div>
+			<div class="col-sm-3">
+				<h2>Catarrh</h2>
+				<p>learn treatment and symtptoms</p>				
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</div>
+	<br>
+</div>
+  </div>
+</div>
+
+
+
+	  </div>
+	  <div id="app1" >
+	  </div>
+	  <div id="app2" >
+	  </div>
+	  <div id="app3" >
+	  </div>
+	  <div id="app4" >
+	  </div>
+
+   
+ <script src="vue.js"></script>
+ <script src="node_modules\vuetify\dist\vuetify.js"></script>
+<script>
+new Vue({
+  el: '#app ',
+  data:{
+  	show:false,
+  	sheet: false,
+    tiles: [
+      { img: 'keep.png', title: 'Keep' },
+      { img: 'inbox.png', title: 'Inbox' },
+      { img: 'hangouts.png', title: 'Hangouts' },
+      { img: 'messenger.png', title: 'Messenger' },
+      { img: 'google.png', title: 'Google+' }
+    ]
+  }
+
+});
+
+
+ </script>
+</body>
+</html>
